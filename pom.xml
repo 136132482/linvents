@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>netty</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>netty</name>
+    <description>Demo project for Spring Boot</description>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.0.31-beta</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <!--注解生成实体类set和get方法-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.25.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>netty</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!--<excludes>-->
+                    <!--<exclude>application*.properties</exclude>-->
+                <!--</excludes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>application.properties</include>-->
+                    <!--<include>application-${package.environment}.properties</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/java</directory>-->
+                <!--<includes>-->
+                    <!--<include>**/*.xml</include>-->
+                <!--</includes>-->
+            </resource>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <includes>
+                    <include>**/*.js</include>
+                    <include>**/*.css</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+
+                </configuration>
+            </plugin>
+
+            <!-- 项目根目录下执行:
+                   mvn clean package -Dmaven.test.skip=true
+                   打包完之后生成jar包目录 d:/jar/qypms
+                   -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+            <archive>
+                <manifest>
+                    <!-- 在jar包的MF文件中生成Class-Path属性 -->
+                    <addClasspath>true</addClasspath>
+                    <!-- Class-Path 前缀 -->
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <!-- main全限定包名 -->
+                    <mainClass>com.example.netty.Application</mainClass>
+                </manifest>
+            </archive>
+            <outputDirectory>/Users/a10.12/netty</outputDirectory>
+        </configuration>
+    </plugin>
+
+    <plugin>
+
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>copy</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>/Users/a10.12/netty</outputDirectory>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
+    <plugin>
+        <groupId>com.juvenxu.portable-config-maven-plugin</groupId>
+        <artifactId>portable-config-maven-plugin</artifactId>
+        <version>1.1.5</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>replace-package</goal>
+                </goals>
+            </execution>
+        </executions>
+        <configuration>
+            <portableConfig>${portableConfig}</portableConfig>
+        </configuration>
+    </plugin>
+</plugins>
+        </build>
+
+<dependencyManagement>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Edgware.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+</dependencies>
+</dependencyManagement>
+
+</project>
