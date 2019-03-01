@@ -178,27 +178,27 @@
                     <mainClass>com.example.netty.Application</mainClass>
                 </manifest>
             </archive>
-            <outputDirectory>/Users/a10.12/netty/jar</outputDirectory>
+            <outputDirectory>/usr/local/workspace/container/netty</outputDirectory>
         </configuration>
     </plugin>
 
-    <!--<plugin>-->
+    <plugin>
 
-        <!--<groupId>org.apache.maven.plugins</groupId>-->
-        <!--<artifactId>maven-dependency-plugin</artifactId>-->
-        <!--<executions>-->
-            <!--<execution>-->
-                <!--<id>copy</id>-->
-                <!--<phase>package</phase>-->
-                <!--<goals>-->
-                    <!--<goal>copy-dependencies</goal>-->
-                <!--</goals>-->
-                <!--<configuration>-->
-                    <!--<outputDirectory>/Users/a10.12/netty</outputDirectory>-->
-                <!--</configuration>-->
-            <!--</execution>-->
-        <!--</executions>-->
-    <!--</plugin>-->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>copy</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>/usr/local/workspace/container/netty/lib</outputDirectory>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
 
     <plugin>
         <groupId>com.juvenxu.portable-config-maven-plugin</groupId>
