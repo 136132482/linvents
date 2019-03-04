@@ -178,7 +178,7 @@
                     <mainClass>com.example.netty.Application</mainClass>
                 </manifest>
             </archive>
-            <outputDirectory>/usr/local/workspace/container/netty</outputDirectory>
+            <outputDirectory>/Users/a10.12/netty/jar</outputDirectory>
         </configuration>
     </plugin>
 
@@ -194,7 +194,7 @@
                     <goal>copy-dependencies</goal>
                 </goals>
                 <configuration>
-                    <outputDirectory>/usr/local/workspace/container/netty/lib</outputDirectory>
+                    <outputDirectory>/Users/a10.12/netty</outputDirectory>
                 </configuration>
             </execution>
         </executions>
