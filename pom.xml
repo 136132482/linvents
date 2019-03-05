@@ -178,7 +178,7 @@
                     <mainClass>com.example.netty.Application</mainClass>
                 </manifest>
             </archive>
-            <outputDirectory>/Users/Shared/Jenkins/Home/workspace/jarbao</outputDirectory>
+            <outputDirectory>/Users/Shared/Jenkins/Home/workspace/betty/target</outputDirectory>
         </configuration>
     </plugin>
 
