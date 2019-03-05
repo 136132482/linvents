@@ -13,44 +13,44 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>netty</name>
     <description>Demo project for Spring Boot</description>
-    <profiles>
-        <profile>
-            <!-- 本地开发环境 192.168.3.221 -->
-            <id>dev</id>
-            <properties>
-                <package.environment>dev</package.environment>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <!-- 测试环境 120.76.213.179 -->
-            <id>test</id>
-            <properties>
-                <package.environment>test</package.environment>
-            </properties>
-        </profile>
-        <profile>
-            <!-- 测试环境 120.76.213.179 -->
-            <id>pre</id>
-            <properties>
-                <package.environment>pre</package.environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <package.environment>prod</package.environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>docker</id>
-            <properties>
-                <package.environment>docker</package.environment>
-            </properties>
-        </profile>
-    </profiles>
+    <!--<profiles>-->
+        <!--<profile>-->
+            <!--&lt;!&ndash; 本地开发环境 192.168.3.221 &ndash;&gt;-->
+            <!--<id>dev</id>-->
+            <!--<properties>-->
+                <!--<package.environment>dev</package.environment>-->
+            <!--</properties>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--&lt;!&ndash; 测试环境 120.76.213.179 &ndash;&gt;-->
+            <!--<id>test</id>-->
+            <!--<properties>-->
+                <!--<package.environment>test</package.environment>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--&lt;!&ndash; 测试环境 120.76.213.179 &ndash;&gt;-->
+            <!--<id>pre</id>-->
+            <!--<properties>-->
+                <!--<package.environment>pre</package.environment>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>prod</id>-->
+            <!--<properties>-->
+                <!--<package.environment>prod</package.environment>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>docker</id>-->
+            <!--<properties>-->
+                <!--<package.environment>docker</package.environment>-->
+            <!--</properties>-->
+        <!--</profile>-->
+    <!--</profiles>-->
 
 
     <properties>
@@ -123,16 +123,16 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <excludes>
-                    <exclude>application*.properties</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>application.properties</include>
-                    <include>application-${package.environment}.properties</include>
-                </includes>
+                <!--<excludes>-->
+                    <!--<exclude>application*.properties</exclude>-->
+                <!--</excludes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>application.properties</include>-->
+                    <!--<include>application-${package.environment}.properties</include>-->
+                <!--</includes>-->
             </resource>
             <resource>
                 <directory>src/main/java</directory>
