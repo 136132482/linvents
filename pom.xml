@@ -178,7 +178,7 @@
                     <mainClass>com.example.netty.Application</mainClass>
                 </manifest>
             </archive>
-            <outputDirectory>/Users/a10.12/netty/jar</outputDirectory>
+            <outputDirectory>/Users/Shared/Jenkins/Home/workspace/jarbao</outputDirectory>
         </configuration>
     </plugin>
 
