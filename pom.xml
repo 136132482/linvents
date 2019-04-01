@@ -178,7 +178,7 @@
                     <mainClass>com.example.netty.Application</mainClass>
                 </manifest>
             </archive>
-            <outputDirectory>/Users/Shared/Jenkins/Home/workspace/betty/target</outputDirectory>
+            <outputDirectory>/Library/afiletomaven/netty</outputDirectory>
         </configuration>
     </plugin>
 
@@ -194,7 +194,7 @@
                     <goal>copy-dependencies</goal>
                 </goals>
                 <configuration>
-                    <outputDirectory>/Users/a10.12/netty</outputDirectory>
+                    <outputDirectory>/Library/afiletomaven/netty/lib</outputDirectory>
                 </configuration>
             </execution>
         </executions>
